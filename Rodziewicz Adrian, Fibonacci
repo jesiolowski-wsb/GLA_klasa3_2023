@@ -1,0 +1,12 @@
+def fibonacii(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacii(n-1) + fibonacii(n-2)
+
+print("2 liczba fibonacciego to", fibonacii(2))
+print("5 liczba fibonacciego to", fibonacii(5))
+print("8 liczba fibonacciego to", fibonacii(8))
+print("10 liczba fibonacciego to", fibonacii(10))
