@@ -1,0 +1,13 @@
+import math
+x=1
+y=0
+n=int(input("Wpisz, który element ciągu Fibonacci chciałbyś zobaczyć: "))
+while True:
+  if x == int(((1/math.sqrt(5))*((1+math.sqrt(5))/2)**n-(1/math.sqrt(5))*((1-math.sqrt(5))/2)**n)):
+    print("Twoja liczba to: " + str(x))
+    break
+  elif y == int(((1/math.sqrt(5))*((1+math.sqrt(5))/2)**n-(1/math.sqrt(5))*((1-math.sqrt(5))/2)**n)):
+    print("Twoja liczba to: " + str(y))
+    break
+  x+=y
+  y+=x
