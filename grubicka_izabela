@@ -7,6 +7,5 @@ def fibonacci(n):
         return fibonacci(n-2)+fibonacci(n-1)
 
 
-index_str = input("podaj numer elementu do wyliczenia: ")
-index = int(index_str)
+index = int(input("podaj numer elementu do wyliczenia: "))
 print(fibonacci(index))
