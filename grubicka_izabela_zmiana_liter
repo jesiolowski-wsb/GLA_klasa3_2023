@@ -1,0 +1,9 @@
+with open('file.txt', 'r') as file:
+    litery = file.read()
+    zmiany = -1
+    poprzednia_litera = " "
+    for litera in litery:
+        if litera != poprzednia_litera:
+            zmiany += 1
+        poprzednia_litera = litera
+print(zmiany)
