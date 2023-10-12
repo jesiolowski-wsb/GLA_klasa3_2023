@@ -1,0 +1,7 @@
+suma = 0
+with open('plik.txt',"r") as plik:
+    zawartosc = plik.read()
+    for n in range(len(zawartosc)-1):
+      if zawartosc[n+1] != zawartosc[n]:
+        suma += 1
+    print(suma)
