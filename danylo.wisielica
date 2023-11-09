@@ -1,0 +1,64 @@
+from random import randint
+import requests
+import json
+wish_list = ['matematyka', 'kotek', 'biologia', 'niebo', 'kraj', 'piesek', 'drzewo', 'kiosk', 'lekarstwo', 'ciasto', 'trucizna' ]
+def slowo():
+  global pin
+  try:
+    site=requests.get('https://random-word-api.herokuapp.com/word')
+    pin=site.text
+    pin=json.loads(pin)
+    pin=''.join(pin)
+  except:
+    pin=wish_list[randint(0,10)]
+def gra(wis):
+  print("Hej, zagramy w gre")
+  szans=5
+  num = 0
+  num1=-1
+  obw=len(wis)
+  memo=[]
+  sun=0
+  sent=[]
+  for i in range(obw):
+    sent.append("_")
+  
+  while szans > 0:
+    print('\n', "".join(sent), '\n')
+    print(f'Zostalo {szans} szans(a)')
+    odp=input("Wpisz literkę: ")
+    if len(odp) > 1:
+      print("Napisales za duzo literek!")
+      continue
+    
+    odp=odp.lower()
+    for i in memo:
+      if odp == i:
+        print("Juz wpisales te literke!")
+        sun+=1
+    if sun > 0:
+      sun=0
+      continue
+    memo.append(odp)
+    for i in wis:
+      num1+=1
+      if odp == i:
+        sent[num1]=odp
+        num += 1
+    if num > 0:
+      print('Dobrze! Literka ' + odp + " wystepuje w tym slowie " + str(num) + " raz(y)")
+      obw-=num
+  
+    else:
+      print('Nie! Tracisz zycie!')
+      szans -= 1
+    if obw == 0:
+      print("Zwyciezyles! Odpowiedz to " + wis)
+      break
+    num = 0
+    num1=-1
+  else:
+    print("Przegrana! Odpowiedz to", pin)
+
+slowo()
+gra(pin)
