@@ -38,5 +38,5 @@ dla parametru 8 zaś,
        |
 ```
 
-### Gotowe odpowiedzi wyśllij na githuba umieszczając w folderze sprawdzian-grudzien-2023 
+### Gotowe odpowiedzi wyśllij na githuba umieszczając w bieżącym folderze (tj. sprawdzian-grudzien-2023)
 
