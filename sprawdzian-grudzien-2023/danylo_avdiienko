@@ -1,0 +1,97 @@
+def l():
+  print('---------------------------')
+print("Zadanie 1, 4")
+class BankAccount:
+  def __init__(self, owner, balance):
+    self.balance = balance
+    self.owner=owner
+    self.history_list=[]
+    
+  def __str__(self):
+    return f"Wlasciciel: {self.owner}, stan konta: {self.balance}"
+  def deposit(self, sum, date):
+    self.balance+=sum
+    self.history_list.append(f"{date} - dodanie na konto {sum}")
+  def withdraw(self, sum, date):
+    if sum <= self.balance:
+      self.balance-=sum
+      self.history_list.append(f"{date} - zabranie z konta {sum}")
+    else:
+      print("Za malo srodkow")
+  def get_balance(self):
+    print("Pan", self.owner, "ma na koncie", str(self.balance), "dolarow")
+  def acc_history(self):
+    print('Historia konta: \n'+ "\n".join(self.history_list))
+    
+
+bankacc=BankAccount("Kotowski", 2000)
+bankacc.deposit(500, "12.01.2005")
+bankacc.withdraw(250, "19.05.2005")
+bankacc.deposit(5000, "13.05.2001")
+bankacc.get_balance()
+print(bankacc)
+bankacc.acc_history()
+
+l()
+print("Zadanie 2")
+
+class Bank:
+  def __init__(self, bank_name):
+    self.bank_name=bank_name
+    self.dictionary={}
+    self.total_balance=0
+    self.number=0
+  def __str__(self):
+    return f"Nazwa banku - {self.bank_name}, liczba kont - {self.number}"
+  def add_account(self, acc_name, acc_balance):
+    self.dictionary[acc_name]=acc_balance
+    self.total_balance+=self.dictionary[acc_name]
+    self.number+=1
+  def show_balance(self, acc_name):
+    print(self.dictionary[acc_name])
+  def get_total_balance(self):
+    print("Total balance = " + str(self.total_balance))
+
+bank=Bank("Mosquito")
+
+bank.add_account("jerzy2005", 5000)
+bank.add_account("olena2001", 1000)
+print(bank)
+bank.get_total_balance()
+
+l()
+print("Zadanie 3")
+
+kont_a_name=input("Nazwa konta A: ")
+kont_a_balance=int(input("Środki na koncie A: "))
+kont_b_name=input("Nazwa konta B: ")
+kont_b_balance=int(input("Środki na koncie B: "))
+
+bank.add_account(kont_a_name, kont_a_balance)
+bank.add_account(kont_b_name, kont_b_balance)
+print(bank)
+bank.get_total_balance()
+
+l()
+print("Zadanie 4")
+
+print("Zrobione razem z pierwszym zadaniem :)")
+
+l()
+print("Zadanie 5")
+
+while True:
+  menu=int(input("Dzien dobry! Co bys chcial zrobic ze swoim kontem?: \n 1 - zobaczyć stan konta \n 2 - dodac pieniedzy \n 3 - zabrac pieniedzy \n 4 - zobaczyc historie konta \n 5 - skonczyc operacje \n"))
+  if menu == 1:
+    bankacc.get_balance()
+  if menu == 2:
+    a=int(input("ile chcesz polozyc na konto? - "))
+    bankacc.deposit(a, "12.01.2005")
+  if menu == 3:
+    a=int(input("ile chcesz zabrac z konta? - "))
+    bankacc.withdraw(a, "12.01.2005")
+  if menu == 4:
+    bankacc.acc_history()
+  if menu ==5:
+    break
+
