@@ -2,7 +2,7 @@
 
 > Uwaga: **Bonusowe** punkty za kreatywnośc w rozwiązywaniu (dodanie kolorków, ascii-art, obsługi błędów, eksportu do pliku, dodatkowych funkcjonalności, elementów animacji - cokolwiek wpadnie wam do głowy :) )
 
-##### OOP
+#### OOP
 1. Stwórz klasę **BankAccount** odpowiedzialną za konto bankowe z metodami dostępowymi:
 - deposit
 - withdraw
@@ -26,7 +26,7 @@ upewnij się że przy próbie dostępu do instancji jako stringa, na ekranie zos
 
 5. dodaj funkcjonalnosc **menu** gdzie operator bedzie miec mozliwosc uzywania dostepnych metod 
 
-##### algorytmika
+#### algorytmika
 6. stwórz funkcjonalność *rysuj_choinkę* która dla wywołania *rysuj_choinkę(2)* na ekranie wydrukuje
 ```
  *
