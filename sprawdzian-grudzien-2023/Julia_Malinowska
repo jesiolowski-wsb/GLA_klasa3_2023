@@ -1,0 +1,31 @@
+
+class BankAccount:
+
+    def __init__(self, deposit, withdraw, get_balance):
+        self.deposit = deposit
+        self.withdraw = withdraw
+        self.get_balance = get_balance
+
+class Bank:
+
+    def add_account(self):
+        x = input()
+
+def rysuj_choinke(r):
+    r = int(r)
+    G = ""
+    sp = ""
+    g = 1
+    s = r - 1
+    G = "*"
+    for y in range(r):
+        S = ""
+        for z in range(s): S += " "
+        s -= 1
+        if y > 0: G += "**"
+        g += 1
+        print(S, G)
+    for y in range(r): sp += " "
+    sp += "|"
+    print(sp)
+rysuj_choinke(15)
