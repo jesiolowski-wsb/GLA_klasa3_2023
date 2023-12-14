@@ -1,0 +1,19 @@
+class BankAccount:
+
+    def __init__(self, deposit, withdraw, get_balance):
+        self.deposit = deposit
+        self.withdraw = withdraw
+        self.get_balance = get_balance
+
+class Bank:
+    def __init__(self, add_account, get_total_balance):
+        self.add_account= add_account
+        self.get_total_balance= get_total_balance
+
+def rysuj_choinke(liczba_poziomow):
+    for i in range(1, liczba_poziomow + 1):
+        print(" " * (liczba_poziomow - i) + "*" * (2*i -1))
+    print(" " * (liczba_poziomow - 1) + "|")
+
+
+rysuj_choinke(8)
