@@ -20,8 +20,8 @@ upewnij się że przy próbie dostępu do instancji jako stringa, na ekranie zos
 6. dodaj funkcjonalnosc **menu** gdzie operator bedzie miec mozliwosc uzywania dostepnych metod 
 
 7. stwórz funkcjonalność 'rysuj_choinkę' która dla wywołania rysuj_choinkę(8) na ekranie wydrukuje
-       *
-      ***
+       /*
+      /*/*/*
      *****
     *******
    *********
