@@ -7,6 +7,7 @@
 
 upewnij się że przy próbie dostępu do instancji jako stringa, na ekranie zostanie wyświetlony stan konta oraz informacja o właściecielu (np. Wlasciciel konta: [wlasciciel_konta], stan konta: [suma_zasobów])
 
+
 2. Stwórz klasę **Bank** odpowiedzialną za powiązanie kont bankowych z bankiem z metodami dostępowymi:
 - add_account
 - get_total_balance
