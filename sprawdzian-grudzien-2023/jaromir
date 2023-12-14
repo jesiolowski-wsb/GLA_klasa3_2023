@@ -1,0 +1,89 @@
+class BankAccount:
+    def __init__(self, owner, initial_balance=0):
+        self.owner = owner
+        self.balance = initial_balance
+
+    def deposit(self, amount):
+        self.amount = amount
+
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+        else:
+            print("za malo srodkow")
+
+    def get_balance(self):
+        return self.balance
+
+    def __str__(self):
+        return f"konto: {self.owner}, Balance: {self.balance}pln"
+
+class Bank:
+    def __init__(self, name):
+        self.name = name
+        self.accounts = []
+
+    def add_account(self, account):
+        self.accounts.append(account)
+
+    def get_total_balance(self):
+        total_balance = sum(account.get_balance() for account in self.accounts)
+        return total_balance
+
+    def __str__(self):
+        return f"Bank {self.name}, Number of Accounts: {len(self.accounts)}"
+
+Bank_name = "MojBank"
+bank_instance = Bank(Bank_name)
+print(bank_instance)
+
+account1 = BankAccount("Jaromir Limanowka", 5000)
+account2 = BankAccount("Mikolaj", 200)
+print("Dostepne konta:")
+print(account1)
+print(account2)
+
+print("konto Jaromira: j")
+print("konto Marka: m")
+choice = input("wybierz konto:  ")
+
+if choice == "j":
+
+    print("MENU:")
+    print("1. deposit")
+    print("2. withdraw")
+    print("3. get balance")
+    choice = input("wybierz akcje:  ")
+
+    if choice == "1":
+        amount = float(input("enter deposit:"))
+        account1.deposit(amount)
+    elif choice == "2":
+        amount = float(input("enter withdraw:"))
+        account1.withdraw(amount)
+    elif choice == "3":
+        print("current balance:", account1.get_balance())
+    else:
+        print("invalid choice")
+
+if choice == "m":
+
+    print("MENU:")
+    print("1. deposit")
+    print("2. withdraw")
+    print("3. get balance")
+    choice = input("wybierz akcje")
+
+    if choice == "1":
+        amount = float(input("enter deposit:"))
+        account2.deposit(amount)
+    elif choice == "2":
+        amount = float(input("enter withdraw:"))
+        account2.withdraw(amount)
+    elif choice == "3":
+        print("current balance:", account2.get_balance())
+    else:
+        print("invalid choice")
+
+
+
