@@ -1,6 +1,6 @@
 # Sprawdzian ze znajomości języka python 14.12.2023
 
-> Uwaga: Bonusowe punkty za kreatywnośc w rozwiązywaniu (dodanie kolorków, ascii-art, obsługi błędów, eksportu do pliku, dodatkowych funkcjonalności, elementów animacji etc...)
+> Uwaga: **Bonusowe** punkty za kreatywnośc w rozwiązywaniu (dodanie kolorków, ascii-art, obsługi błędów, eksportu do pliku, dodatkowych funkcjonalności, elementów animacji etc...)
 
 1. Stwórz klasę **BankAccount** odpowiedzialną za konto bankowe z metodami dostępowymi:
 - deposit
