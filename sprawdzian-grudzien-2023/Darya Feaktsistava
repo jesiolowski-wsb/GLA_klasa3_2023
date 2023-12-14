@@ -1,0 +1,10 @@
+#zadanie 6:
+def rysuj_choinke(m):
+    n= m-1
+    for i in range(m):
+        print(
+            n* " " + i * 2 * "*" + "*")
+        n -= 1
+    print((m-1)* " " + "|")
+rysuj_choinke(20)
+
