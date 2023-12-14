@@ -1,1 +1,36 @@
+class BankAccount:
+    def __init__(self,account_holder,balance=0):
+        self.account_holder = account_holder
+        self.balance = balance
 
+    def get_balance(self,):
+        return self.balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        return f"Deposit {amount} PLN. Current balance: {self.balance} PLN"
+
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -=amount
+            return f"Withdraw {amount} PLN . Current balance: {self.balance} PLN"
+        else:
+            return "No funds"
+x = BankAccount(account_holder="kacper", balance=100)
+print(x.get_balance())
+print(x.deposit(200))
+print(x.withdraw(10))
+class Bank:
+
+    def __init__(self):
+
+
+
+ch=int(input("Ilu stopniowa choinka ?"))
+spacja=' '
+gwiazdka='*'
+k=ch
+for n in range(0,ch+1):
+    i=2*n-1
+    print(k*spacja+i*gwiazdka)
+    k=k-1
