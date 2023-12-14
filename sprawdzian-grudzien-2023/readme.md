@@ -47,6 +47,6 @@ dla parametru 8 zaś,
 ```
 
 
-### Gotowe odpowiedzi wyśllij na githuba umieszczając w bieżącym folderze (tj. sprawdzian-grudzien-2023)
+### Gotowe odpowiedzi wyśllij na githuba umieszczając w bieżącym folderze (tj. sprawdzian-grudzien-2023) w pliku ze swoim imieniem i nazwiskiem w nazwie
 
 
