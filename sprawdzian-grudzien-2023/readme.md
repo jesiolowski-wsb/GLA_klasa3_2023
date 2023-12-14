@@ -14,13 +14,17 @@ upewnij się że przy próbie dostępu do instancji jako stringa, na ekranie zos
 
 upewnij się że przy próbie dostępu do instancji jako stringa, na ekranie zostanie wyświetlona informacja o Banku (np. Bank [X], liczba kont: [Y])
 
+
 3. Uruchom aplikację dostarczając dane do klasy Bank (tj. [nazwa_banku]) i podepnij do niego dwa konta
+
 
 4. dodaj funkcjonalność historii operacji na koncie bankowym
    
-6. dodaj funkcjonalnosc **menu** gdzie operator bedzie miec mozliwosc uzywania dostepnych metod 
 
-7. stwórz funkcjonalność *rysuj_choinkę* która dla wywołania *rysuj_choinkę(2)* na ekranie wydrukuje
+5. dodaj funkcjonalnosc **menu** gdzie operator bedzie miec mozliwosc uzywania dostepnych metod 
+
+
+6. stwórz funkcjonalność *rysuj_choinkę* która dla wywołania *rysuj_choinkę(2)* na ekranie wydrukuje
 ```
  *
 ***
@@ -39,5 +43,8 @@ dla parametru 8 zaś,
        |
 ```
 
+
 ### Gotowe odpowiedzi wyśllij na githuba umieszczając w bieżącym folderze (tj. sprawdzian-grudzien-2023)
+
+## Bonusowe punkty za kreatywnośc w rozwiązywaniu
 
