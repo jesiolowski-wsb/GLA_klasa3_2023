@@ -45,7 +45,7 @@ dla parametru 8 zaś,
 ***************
        |
 ```
-
+ergo: 1 parametr na wejscie (i w zaleznosci od niego tyle poziomów choinki). Dodatkowo 'pień' choinki na 1 znak
 
 ### Gotowe odpowiedzi wyśllij na githuba umieszczając w bieżącym folderze (tj. sprawdzian-grudzien-2023) w pliku ze swoim imieniem i nazwiskiem w nazwie
 
