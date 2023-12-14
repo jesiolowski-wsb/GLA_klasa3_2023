@@ -1,5 +1,7 @@
 # Sprawdzian ze znajomości języka python 14.12.2023
 
+> Uwaga: Bonusowe punkty za kreatywnośc w rozwiązywaniu (dodanie kolorków, ascii-art, obsługi błędów, eksportu do pliku, dodatkowych funkcjonalności, elementów animacji etc...)
+
 1. Stwórz klasę **BankAccount** odpowiedzialną za konto bankowe z metodami dostępowymi:
 - deposit
 - withdraw
@@ -46,5 +48,4 @@ dla parametru 8 zaś,
 
 ### Gotowe odpowiedzi wyśllij na githuba umieszczając w bieżącym folderze (tj. sprawdzian-grudzien-2023)
 
-> Bonusowe punkty za kreatywnośc w rozwiązywaniu (dodanie kolorków, ascii-art, obsługi błędów, eksportu do pliku, dodatkowych funkcjonalności, elementów animacji etc...)
 
