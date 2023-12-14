@@ -46,5 +46,5 @@ dla parametru 8 zaś,
 
 ### Gotowe odpowiedzi wyśllij na githuba umieszczając w bieżącym folderze (tj. sprawdzian-grudzien-2023)
 
-## Bonusowe punkty za kreatywnośc w rozwiązywaniu
+# Bonusowe punkty za kreatywnośc w rozwiązywaniu (dodanie kolorków, ascii-art, obsługi błędów, eksportu do pliku, dodatkowych funkcjonalności, elementów animacji etc...)
 
