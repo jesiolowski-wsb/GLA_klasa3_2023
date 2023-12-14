@@ -1,3 +1,4 @@
+#Bank ------------------------------------------------------------------------------------------------------------------------------------------
 class BankAccount:
     def __init__(self, owner, initial_balance=0):
         self.owner = owner
@@ -100,3 +101,23 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#choinka --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+def rysuj_choinkę(warstwy):
+    for i in range(1, warstwy + 1):
+        for j in range(warstwy - i):
+            print(" ", end="")
+
+        for k in range(2 * i - 1):
+            print("*", end="")
+
+        print()
+
+    for i in range(i - 1):
+        print(" ", end="")
+
+    print("|")
+
+warstwy = int(input("Podaj liczbę warstw choinki: "))
+rysuj_choinkę(warstwy)
