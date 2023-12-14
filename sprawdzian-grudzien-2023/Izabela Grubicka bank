@@ -1,0 +1,54 @@
+class BankAccount:
+    def __init__(self, wlasciciel_konta, stan_konta):
+        self.wlasciciel_konta = wlasciciel_konta
+        self.stan_konta = stan_konta
+
+    def __str__(self):
+        return f"właściciel: {self.wlasciciel_konta}, stan konta: {self.stan_konta}"
+
+    def deposit(self, deposit_money):
+        self.stan_konta += deposit_money
+
+    def withdraw(self, withdraw_money):
+        self.stan_konta -= withdraw_money
+        if self.stan_konta < 0:
+            print("twój stan konta jest poniżej zera")
+
+    def get_balance(self):
+        print(f"{self.stan_konta}")
+
+
+class Bank:
+    def __init__(self, nazwa_banku):
+        self.bank_accounts = []
+        self.nazwa_banku = nazwa_banku
+
+    def __str__(self):
+        return f"nazwa: {self.nazwa_banku}, liczba kont: {len(self.bank_accounts)}"
+
+    def add_account(self, bank_account):
+        self.bank_accounts.append(bank_account)
+
+    def get_total_balance(self):
+        total_balance = bank_account01.stan_konta + bank_account02.stan_konta
+        print(total_balance)
+
+
+bank_account01 = BankAccount("Adam", 1000)
+bank_account02 = BankAccount("Kasia", 400)
+
+bank = Bank("mBank")
+bank_account01.deposit(400)
+bank_account01.get_balance()
+print(bank_account01)
+bank_account01.withdraw(500)
+bank_account01.get_balance()
+print(bank)
+bank.add_account(bank_account01)
+bank.add_account(bank_account02)
+print(bank)
+bank_account02.withdraw(300)
+bank_account02.get_balance()
+bank_account02.withdraw(200)
+print(bank_account02)
+bank.get_total_balance()
