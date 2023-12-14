@@ -17,4 +17,4 @@ upewnij się że przy próbie dostępu do instancji jako stringa, na ekranie zos
 
 4. dodaj funkcjonalność historii operacji na koncie bankowym
    
-6. dodaj funkcjonalnosc menu gdzie operator bedzie miec mozliwosc uzywania dostepnych metod 
+6. dodaj funkcjonalnosc **menu** gdzie operator bedzie miec mozliwosc uzywania dostepnych metod 
