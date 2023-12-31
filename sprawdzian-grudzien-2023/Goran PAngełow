@@ -1,0 +1,216 @@
+import os
+class BankAccount:
+    def __init__(self, wlasciciel, stan):
+        self.wlasciciel=wlasciciel
+        self.stan=stan
+        self.historia=[]
+    def deposit(self,kwota):
+        self.stan=self.stan+kwota
+    def withdraw(self,kwota):
+        self.stan=self.stan - kwota
+    def pokazkonto(self):
+        print(f"Właściciel {self.wlasciciel}")
+        print(f"Stan {self.stan} zł")
+class Bank:
+    def __init__(self,nazwa,liczbakont,balans):
+        self.nazwa=nazwa
+        self.liczbakont=liczbakont
+        self.balans=balans
+        self.powiazanekonta=[]
+    def dodajkonto (self,konto):
+        self.powiazanekonta.append(konto)
+    def dodajbalans(self,kwota):
+        self.balans=self.balans + kwota
+n=0
+konta=[]
+banki=[]
+while n==0:
+    print("\n")
+    print("Co chcesz zrobić: ")
+    print("1. Dodać konto")
+    print("2. Deposit")
+    print("3. Withdraw")
+    print("4. Pokaż dane konta")
+    print("5. Stwórz Bank")
+    print("6. Podepnij konto do banku")
+    print("7. Pokaż Banki")
+    print("8. Pokaż konta przypisane do konkretnych banków")
+    print("9. Pokaż historie operacji na koncie")
+    print("10. Wyjdź")
+    i=input()
+    if i.isnumeric():
+        i=int(i)
+        dlug = 0
+        dlugb=0
+        for o in konta:
+            dlug = dlug + 1
+        for o in banki:
+            dlugb = dlugb + 1
+        if i == 1:
+            v = input("Podaj imię i nazwisko: ")
+            e = BankAccount(v, 0)
+            from datetime import datetime
+            now = datetime.now()
+            e.historia.append(f"Stworzono konto     {now}")
+            konta.append(e)
+            os.system('cls||clear')
+        elif i == 2:
+            print("Wybierz konto:")
+            a = 0
+            while a < dlug:
+                print(f"{a + 1}. {konta[a].wlasciciel}")
+                a = a + 1
+            c = input()
+            while c.isnumeric() is False or int(c)>dlug :
+                c = input("Podaj poprawne konto: ")
+            b = input("Podaj kwotę: ")
+            while b.isnumeric() is False:
+                b = input("Podaj poprawną kwote: ")
+            c = int(c)
+            b = int(b)
+            konta[c - 1].deposit(b)
+            from datetime import datetime
+            now = datetime.now()
+            konta[c-1].historia.append(f"Zdepozytowano {b} zł    {now}")
+            os.system('cls||clear')
+        elif i == 3:
+            print("Wybierz konto:")
+            a = 0
+            while a < dlug:
+                print(f"{a + 1}. {konta[a].wlasciciel}")
+                a = a + 1
+            c = input()
+            while c.isnumeric() is False or int(c) > dlug:
+                c = input("Podaj poprawne konto: ")
+            c = int(c)
+            b = input("Podaj kwotę: ")
+            while b.isnumeric() is False:
+                b = input("Podaj poprawną kwote: ")
+            b = int(b)
+            konta[c - 1].withdraw(b)
+            from datetime import datetime
+            now = datetime.now()
+            konta[c-1].historia.append(f"Wyciągnięto {b} zł     {now}")
+            os.system('cls||clear')
+        elif i == 4:
+            print("Wybierz konto:")
+            a = 0
+            while a < dlug:
+                print(f"{a + 1}. {konta[a].wlasciciel}")
+                a = a + 1
+            c = input()
+            while c.isnumeric() is False or int(c)>dlug :
+                c = input("Podaj poprawne konto: ")
+            c = int(c)
+            konta[c - 1].pokazkonto()
+            l=input("Wpisz 0 aby wrócić do menu")
+            while l!="0":
+                l = input("Wpisz 0 aby wrócić do menu")
+            os.system('cls||clear')
+        elif i==5:
+            p = input("Podaj nazwe banku: ")
+            f = Bank(p, 0,0)
+            banki.append(f)
+            os.system('cls||clear')
+        elif i==6:
+            print("Wybierz bank:")
+            a = 0
+            while a < dlugb:
+                print(f"{a + 1}. {banki[a].nazwa}")
+                a = a + 1
+            g = input()
+            while g.isnumeric() is False or int(b)>dlugb:
+                g = input("Podaj poprawny bank: ")
+            g = int(g)
+            print("Wybierz konto:")
+            a = 0
+            while a < dlug:
+                print(f"{a + 1}. {konta[a].wlasciciel}")
+                a = a + 1
+            c = input()
+            while c.isnumeric() is False or int(c) > dlug:
+                c = input("Podaj poprawne konto: ")
+            c = int(c)
+            banki[g-1].dodajkonto(konta[c-1])
+            banki[g-1].liczbakont=banki[g-1].liczbakont+1
+            banki[g-1].dodajkonto(konta[c-1].stan)
+            from datetime import datetime
+            now = datetime.now()
+            konta[c-1].historia.append(f"Podpięto do banku {banki[g-1].nazwa}    {now}")
+            os.system('cls||clear')
+        elif i==7:
+            a = 0
+            while a < dlugb:
+                print(f"{a + 1}. {banki[a].nazwa}")
+                print(f"    Liczba kont: {banki[a].liczbakont}")
+                print(f"    Całkowity balans: {banki[a].balans}")
+                a = a + 1
+            l = input("Wpisz 0 aby wrócić do menu")
+            while l != "0":
+                l = input("Wpisz 0 aby wrócić do menu")
+            os.system('cls||clear')
+        elif i==8:
+            print("Wybierz bank:")
+            a = 0
+            while a < dlugb:
+                print(f"{a + 1}. {banki[a].nazwa}")
+                a = a + 1
+            g = input()
+            while g.isnumeric() is False or int(b) > dlugb:
+                g = input("Podaj poprawny bank: ")
+            g = int(g)
+            a=0
+            licznik=0
+            for o in banki[g-1].powiazanekonta:
+                licznik = licznik + 1
+            while a < licznik:
+                print(f"{a + 1}. {banki[g-1].powiazanekonta[a].wlasciciel}")
+                a=a+1
+            l = input("Wpisz 0 aby wrócić do menu")
+            while l != "0":
+                l = input("Wpisz 0 aby wrócić do menu")
+            os.system('cls||clear')
+        elif i==9:
+            print("Wybierz konto:")
+            a = 0
+            while a < dlug:
+                print(f"{a + 1}. {konta[a].wlasciciel}")
+                a = a + 1
+            c = input()
+            while c.isnumeric() is False or int(c) > dlug:
+                c = input("Podaj poprawne konto: ")
+            c = int(c)
+            licznik=0
+            for o in konta[c-1].historia:
+                licznik = licznik+1
+            a=0
+            while a < licznik:
+                print(f"{a + 1}. {konta[c-1].historia[a]}")
+                a=a+1
+            l = input("Wpisz 0 aby wrócić do menu")
+            while l != "0":
+                l = input("Wpisz 0 aby wrócić do menu")
+            os.system('cls||clear')
+        elif i==10:
+            quit()
+        else:
+            os.system('cls||clear')
+            print("Błędna operajca")
+    else:
+        os.system('cls||clear')
+        print("Błędna operajca")
+
+
+def rysuj_choinke(poziom):
+    n=int(poziom)
+    poziom=int(poziom)
+    b=1
+    gwiazdka="*"
+    spacja=" "
+    while n>0:
+        print(spacja*(n-1), end="")
+        print(gwiazdka*(2*b-1))
+        n=n-1
+        b=b+1
+    print(spacja*(poziom-1), end="|")
+rysuj_choinke(input("Podaj liczbe liczbę poziomów choinki: "))
