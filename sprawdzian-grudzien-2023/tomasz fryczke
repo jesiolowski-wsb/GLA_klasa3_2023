@@ -1,0 +1,73 @@
+print("1---------------------------")
+class BankAccount:
+  def __init__(self,deposit,withdraw,get_balance,owner,historia):
+    self.deposit = deposit
+    self.withdraw = withdraw
+    self.get_balance = get_balance + deposit - withdraw
+    self.owner = owner
+    self.historia = historia
+   
+I = BankAccount(0,0,1000,"Janusz",[])
+print(f"Stan konta: {I.get_balance}")
+
+a = int(input("deposit: "))
+
+b = int(input("withdraw: "))
+
+hist = [a, b]
+I = BankAccount(a,b,1000,"Janusz",[].extend(hist))
+
+print(f"Wlasciciel konta: {I.owner}, stan konta: {I.get_balance}")
+print("2,3----------------------------------")
+class Bank:
+  def __init__(self,add_account,get_total_balance,nazwa):
+    self.add_account=add_account
+    self.get_total_balance=get_total_balance
+    self.nazwa=nazwa
+
+print()
+list = ["Konto1"]
+B = Bank(list,200,"Bank1")
+print(f"Konta w {B.nazwa}: {B.add_account}, Całkowity balans: {B.get_total_balance}")
+print()
+
+C = str(input("dodaj konto: "))
+
+list.append(C)
+
+D = int(input("stan nowego konta: "))
+
+B = Bank(list,200+D,"Bank1")
+print(f"Konta w {B.nazwa}: {B.add_account}, Całkowity balans: {B.get_total_balance}")
+print(f"Ilośc kont w {B.nazwa}: {len(B.add_account)}")
+print("4,5--------------------------------")
+#historia konta
+I = BankAccount(a,b,1000,"Janusz",hist)
+print(f"Wlasciciel konta: {I.owner}, stan konta: {I.get_balance}")
+
+a = int(input("deposit: "))
+
+b = int(input("withdraw: "))
+
+hist.append(a)
+hist.append(b)
+
+I = BankAccount(a,b,1000,"Janusz",hist)
+
+print(f"Wlasciciel konta: {I.owner}, stan konta: {I.get_balance}")
+
+a = int(input("deposit: "))
+
+b = int(input("withdraw: "))
+
+hist.append(a)
+hist.append(b)
+I = BankAccount(a,b,1000,"Janusz",I.historia)
+
+print(f"Wlasciciel konta: {I.owner}, stan konta: {I.get_balance}")
+print(f"Historia konta: { I.historia}")
+print("6-----------------------------")
+n = int(input("choina: "))
+for x in range(n+1):
+  print(f"{(n-x)*' '}{x*'*'}{(x-1)*'*'}")
+print(f"{(n-1)*' '}{'|'}")
