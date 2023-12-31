@@ -1,1 +1,28 @@
-https://replit.com/@MartaFryczke/sprawdzian#main.py nie skończyłam :(
+print("1.")
+class BankAccount:
+  def __init__(self, deposit, withdraw, get_balance, wlasciciel_konta):
+    self.deposit = deposit
+    self.withdraw = withdraw
+    self.get_balance = get_balance + deposit - withdraw
+    self.wlasciciel_konta = "Józef Kowalski"
+    def __str__(self):
+      print(f"Właściciel konta: {self.wlasciciel_konta}, stan konta: {get_balance}")
+
+a = BankAccount(0,0,10,"Józef Kowalski")
+print(f"Właściciel konta: {a.wlasciciel_konta}, stan konta: {a.get_balance}")
+x = int(input("deposit: "))
+y = int(input("withdraw: "))
+a = BankAccount(x,y,10,"Józef Kowalski")
+print(f"Właściciel konta: {a.wlasciciel_konta}, stan konta: {a.get_balance}")
+
+print("2.")
+class Bank:
+  def __init__(self, add_account, get_total_balance, nazwa, liczba_kont, konto1, konto2):
+    self.add_account = add_account
+    self.get_total_balance = get_total_balance
+    self.nazwa = "Bank Polski"
+    self.liczba_kont = 99999
+    self.konto1 = input("konto 1: ")
+    self.konto1 = input("konto 2: ")
+  def __str__(self):
+    print(f"Bank: {self.nazwa}, liczba kont: {self.liczba_kont}")
