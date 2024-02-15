@@ -49,3 +49,5 @@ Frazy /  klucze do wyszukania w dokumentacji to:
 - {}
 - []
 - ?
+
+### Gotowe odpowiedzi wyśllij na githuba umieszczając w bieżącym folderze (tj. sprawdzian-grudzien-2023) w pliku ze swoim imieniem i nazwiskiem w nazwie
