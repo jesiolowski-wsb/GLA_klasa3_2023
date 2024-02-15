@@ -1,0 +1,24 @@
+import re
+tekst = "(...) Historia przegiegu tranzakcji sklepu X: anna_kowalska@wp.pl zakupił(a) produkt od marcin.lewandowski@gmail.org jakiś czas potem sprzedając go dalej dodając marżę w wysokości 25% tak że produkt wylądował u johnDoe@sample.net. Następnie historia traci klarowność - w bazie mamy informację jedynie o adresie unknown-person@o2.pl"
+a = re.split("\s", tekst)
+p = len(a)
+
+n = 0
+lista = []
+while n < p:
+    z = a[n]
+    if "@" in z:
+        lista.append(z)
+    n = n+1
+print(lista)
+lista1 = []
+m = 0
+k = len(lista)
+while m < k:
+    g = lista[m]
+    if ".pl" in g:
+        lista1.append(g)
+    m = m+1
+print(lista1)
+h = len(lista1)
+print(h)
