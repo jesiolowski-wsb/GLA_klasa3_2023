@@ -1,0 +1,25 @@
+import re
+
+tekst = "(...) Historia przegiegu tranzakcji sklepu X: anna_kowalska@wp.pl zakupił(a) produkt od marcin.lewandowski@gmail.org jakiś czas potem sprzedając go dalej dodając marżę w wysokości 25% tak że produkt wylądował u johnDoe@sample.net. Następnie historia traci klarowność - w bazie mamy informację jedynie o adresie unknown-person@o2.pl"
+t = re.findall(r'[a-zA-Z0-9-._]+@[a-z.0-9]+', tekst)
+
+#for i in range(t.len()):
+  #  if t[i].endswith('.'): t[i] = t[i][0:-1]
+x = 0
+for i in range(4):
+    if t[i].endswith("pl"): x += 1
+print(x)
+print(t)
+
+
+
+tekst = "Kontakt do naszych oddziałów: Warszawa +48 123 456 789, Berlin +49 234 567 890, Nowy Jork +1 987 654 3210, Londyn +44-843-243-3224"
+#t = re.findall(r'\d+', tekst)
+#t = re.findall(r'^+', tekst)
+t = re.split(r'[A-Za-z]', tekst)
+print(t)
+x = ""
+#for i in [t.len()]:
+   # x += t[i]
+  #  if (i+1)%4 == 0:
+     #   T = "+" + str(x)
