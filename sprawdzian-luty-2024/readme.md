@@ -27,8 +27,16 @@ Zadania do wykonania:
 ### SEKCJA C: zmiana treści wg. wzorca
 Napisz program który używa funkcji sub z modułu re aby zanonimizować numery telefonów w podanym tekście. Program powinien zachować numery kierunkowe krajów (np. +48 dla Polski), ale zastąpić resztę numeru telefonu gwiazdkami * tak, aby ukryć rzeczywiste numery telefonów.
 
-####Wymagania:
+#### Wymagania:
 
 Program powinien identyfikować różne formaty numerów telefonów - w tym międzynarodowe numery zaczynające się od + oraz potencjalne spacje, myślniki i nawiasy w numerach.
 - Każdy numer telefonu powinien zostać zanonimizowany do postaci: kod kierunkowy + " *****", gdzie liczba gwiazdek odpowiada długości oryginalnego numeru bez kodu kierunkowego.
 - Tekst na wejściu może zawierać różne numery telefonów z różnych krajów.
+
+```
+tekst = "Kontakt do naszych oddziałów: Warszawa +48 123 456 789, Berlin +49 234 567 890, Nowy Jork +1 987 654 3210, UK +44-843-243-3224"
+```
+powinien w wyniku działania na ekranie wyświetlić
+```
+Kontakt do naszych oddziałów: Warszawa +48 *********, Berlin +49 *********, Nowy Jork +1 **********, UK +44 **********
+```
