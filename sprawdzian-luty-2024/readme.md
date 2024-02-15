@@ -40,3 +40,12 @@ powinien w wyniku działania na ekranie wyświetlić
 ```
 Kontakt do naszych oddziałów: Warszawa +48 *********, Berlin +49 *********, Nowy Jork +1 **********, Londyn +44 **********
 ```
+
+#### Podpowiedź
+Frazy /  klucze do wyszukania w dokumentacji to:
+- Raw String Notation
+- findall, search, sub
+- \d
+- {}
+- []
+- ?
