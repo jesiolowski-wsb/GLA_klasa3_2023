@@ -29,14 +29,14 @@ Napisz program który używa funkcji sub z modułu re aby zanonimizować numery 
 
 #### Wymagania:
 
-Program powinien identyfikować różne formaty numerów telefonów - w tym międzynarodowe numery zaczynające się od + oraz potencjalne spacje, myślniki i nawiasy w numerach.
+Program powinien identyfikować różne formaty numerów telefonów - w tym międzynarodowe numery zaczynające się od + oraz potencjalne spacje czy myślniki w numerach
 - Każdy numer telefonu powinien zostać zanonimizowany do postaci: kod kierunkowy + " *****", gdzie liczba gwiazdek odpowiada długości oryginalnego numeru bez kodu kierunkowego.
 - Tekst na wejściu może zawierać różne numery telefonów z różnych krajów.
 
 ```
-tekst = "Kontakt do naszych oddziałów: Warszawa +48 123 456 789, Berlin +49 234 567 890, Nowy Jork +1 987 654 3210, UK +44-843-243-3224"
+tekst = "Kontakt do naszych oddziałów: Warszawa +48 123 456 789, Berlin +49 234 567 890, Nowy Jork +1 987 654 3210, Londyn +44-843-243-3224"
 ```
 powinien w wyniku działania na ekranie wyświetlić
 ```
-Kontakt do naszych oddziałów: Warszawa +48 *********, Berlin +49 *********, Nowy Jork +1 **********, UK +44 **********
+Kontakt do naszych oddziałów: Warszawa +48 *********, Berlin +49 *********, Nowy Jork +1 **********, Londyn +44 **********
 ```
