@@ -1,4 +1,5 @@
 # Wyrażenia regularne
+Do rozwiązań użyj wyrażeń regularnych ([dokumentacja W3Schools](https://www.w3schools.com/python/python_regex.asp), [re docs](https://docs.python.org/3/library/re.html), [online regex tester](https://regex101.com/) )
 
 ### SEKCJA A: zwracanie listy wyników
 Napisz program który używa wyrażeń regularnych do:
@@ -20,6 +21,6 @@ W pliku `numery.txt` zapisanych jest 1000 numerów telefonów (jeden numer na wi
 ```
 
 Zadania do wykonania:
-1. Podaj liczbę numerów telefonów, które zawierają co najmniej trzy te same cyfry obok siebie (np. 111, 222 itd.). Do finalnego rozwiązania użyj wyrażeń regularnych ([dokumentacja W3Schools](https://www.w3schools.com/python/python_regex.asp), [online regex tester](https://regex101.com/) )
-2. Wszystkie numery telefonów o tej samej liczbie cyfr tworzą jedną "rodzinę". Podaj liczbę niepustych rodzin numerów telefonów.
+1. Podaj liczbę numerów telefonów, które zawierają co najmniej trzy te same cyfry obok siebie (np. 111, 222 itd.)
+2. Wszystkie numery telefonów o tej samej liczbie cyfr tworzą jedną "rodzinę". Podaj liczbę niepustych rodzin numerów telefonów
 
