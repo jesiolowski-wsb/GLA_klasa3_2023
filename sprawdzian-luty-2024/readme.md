@@ -1,5 +1,5 @@
 # Wyrażenia regularne
-Do rozwiązań użyj wyrażeń regularnych ([dokumentacja W3Schools](https://www.w3schools.com/python/python_regex.asp), [re docs](https://docs.python.org/3/library/re.html), [online regex tester](https://regex101.com/) )
+Do rozwiązań użyj wyrażeń regularnych ([dokumentacja W3Schools](https://www.w3schools.com/python/python_regex.asp), [re docs](https://docs.python.org/3/library/re.html), [online regex tester](https://regex101.com/) [polski tutorial](https://ggoralski.gitlab.io/python-wprowadzenie/czesc_ii/2_01-regex/))
 
 ### SEKCJA A: zwracanie listy wyników
 Napisz program który używa wyrażeń regularnych do:
