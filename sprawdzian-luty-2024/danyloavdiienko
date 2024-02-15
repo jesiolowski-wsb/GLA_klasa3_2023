@@ -1,0 +1,17 @@
+import re
+tekst = "(...) Historia przegiegu tranzakcji sklepu X: anna_kowalska@wp.pl zakupił(a) produkt od marcin.lewandowski@gmail.org jakiś czas potem sprzedając go dalej dodając marżę w wysokości 25% tak że produkt wylądował u johnDoe@sample.net. Następnie historia traci klarowność - w bazie mamy informację jedynie o adresie unknown-person@o2.pl"
+x = re.findall("[^@ ]+@[^@ ]+", tekst)
+for i in x:
+  print(i)
+
+y= re.findall("[^@ ]+@[^@ ]+[.]pl", tekst)
+
+print("Polskie maila: " + ",".join(y) + ", liczba polskich adresów: " + str(len(y)))
+
+
+print("_____________")
+
+with open("numery.txt") as text:
+  text="".join(text)
+  x=re.findall("111+|222+|333+|444+|555+|666+|777+|888+|999+|000+", text)
+  print(len(x))
