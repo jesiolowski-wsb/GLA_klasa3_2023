@@ -1,0 +1,33 @@
+import random
+guessed = ["?","?","?","?","?"]
+life = 6
+slowo = random.choice(["krowa", "kogut", "fotel", "kotek", "droga"])
+
+while life > 0:
+    print(life, "attemps left")
+
+    literka = input("Type a letter ")
+
+    if literka in slowo:
+        guessed[int(slowo.index(literka))] = literka
+        print("correct")
+        print("")
+        if ("?") in guessed:
+            life = life
+        else:
+            life = 0
+    else:
+        print("Not found")
+        print("")
+        life -= 1
+        if ("?") in guessed:
+            life = life
+        else:
+            life = 0
+
+    print("Guessed so far ", guessed)
+
+
+
+else:
+    print("game over")
