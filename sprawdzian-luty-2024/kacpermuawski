@@ -1,0 +1,12 @@
+# import re
+# tekst = "(...) Historia przegiegu tranzakcji sklepu X: anna_kowalska@wp.pl zakupił(a) produkt od marcin.lewandowski@gmail.org jakiś czas potem sprzedając go dalej dodając marżę w wysokości 25% tak że produkt wylądował u johnDoe@sample.net. Następnie historia traci klarowność - w bazie mamy informację jedynie o adresie unknown-person@o2.pl"
+# maile=[]
+# wzorzec = re.compile(r'[A-Za-z0-9._-]+@[A-Za-z0-9]+\.[A-Za-z0-9]+')
+# maile=wzorzec.findall(tekst)
+# print(maile)
+# polskie=[]
+# for x in maile:
+#     if x.endswith('pl'):
+#         polskie.append(x)
+# print(polskie)
+with open("numery.txt") as numery:
