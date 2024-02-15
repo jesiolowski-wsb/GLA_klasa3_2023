@@ -1,0 +1,23 @@
+import re
+
+tekst = "(...) Historia przegiegu tranzakcji sklepu X: anna_kowalska@wp.pl zakupił(a) produkt od marcin.lewandowski@gmail.org jakiś czas potem sprzedając go dalej dodając marżę w wysokości 25% tak że produkt wylądował u johnDoe@sample.net. Następnie historia traci klarowność - w bazie mamy informację jedynie o adresie unknown-person@o2.pl"
+regex_email = r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}'
+liczby = r'[0-9]'
+znalezione_adresy = re.findall(regex_email, tekst)
+znalezione_liczby = re.findall(liczby, tekst)
+polskie = [adres for adres in znalezione_adresy if adres.endswith('.pl')]
+
+
+print("Znalezione adresy e-mail:")
+for adres in znalezione_adresy:
+    print(adres)
+
+
+print("\nLiczba adresów z polskich serwisów:" , len(polskie))
+print(polskie)
+
+print("Wszystkie liczby ")
+for liczby in znalezione_liczby:
+    print(liczby)
+
+
