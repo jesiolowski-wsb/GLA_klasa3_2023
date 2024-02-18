@@ -1,0 +1,40 @@
+import re
+
+#C
+
+text_c = "Kontakt do naszych oddziałów: Warszawa +48 *********, Berlin +49 *********, Nowy Jork +1 **********, Londyn +44 **********"
+
+result_c = re.sub(r"-", " ", text_c)
+result_c = re.sub(r"(\d){3,}", r"***", text_c)
+
+print("zaszyfrowane numery:" , result_c)
+
+#A
+
+text_a = tekst = "(...) Historia przegiegu tranzakcji sklepu X: anna_kowalska@wp.pl zakupił(a) produkt od marcin.lewandowski@gmail.org jakiś czas potem sprzedając go dalej dodając marżę w wysokości 25% tak że produkt wylądował u johnDoe@sample.net. Następnie historia traci klarowność - w bazie mamy informację jedynie o adresie unknown-person@o2.pl"
+
+search = re.findall("[^@ ]+@[^@ ]+", text_a)
+
+print(search)
+
+result_a= re.findall("[^@ ]+@[^@ ]+[.]pl", text_a)
+
+print("ilość adresów polskich:" , str(len(result_a)))
+print("polskie adresy maiowe:" , " , ".join(result_a))
+
+#B
+
+with open ("numery.txt", "r") as file:
+  numbers = file.read()
+  split =  numbers.split()
+  str = ' '.join(split)
+  print(str)
+
+x = 0
+count= 0
+while x in range(0, 1000):
+  n = re.search(r'(\d)1{2,}', split[x])
+  if n_3 != None: count = count + 1
+  x = x + 1
+
+print("liczba numerów telefonów, które zawierają co najmniej trzy te same cyfry obok siebie:", count)
