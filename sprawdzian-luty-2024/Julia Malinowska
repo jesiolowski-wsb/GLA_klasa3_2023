@@ -23,3 +23,62 @@ x = ""
    # x += t[i]
   #  if (i+1)%4 == 0:
      #   T = "+" + str(x)
+
+
+
+
+
+
+21.02.2024:
+
+
+import re
+
+tekst = "(...) Historia przegiegu tranzakcji sklepu X: anna_kowalska@wp.pl zakupił(a) produkt od marcin.lewandowski@gmail.org jakiś czas potem sprzedając go dalej dodając marżę w wysokości 25% tak że produkt wylądował u johnDoe@sample.net. Następnie historia traci klarowność - w bazie mamy informację jedynie o adresie unknown-person@o2.pl"
+t = re.findall(r'[a-zA-Z0-9-._]+@[a-z.0-9]+', tekst)
+x = 0
+for i in range(4):
+    if t[i].endswith("pl"):
+        x += 1
+        print("Ten adres pochodzi z Polski:", t[i])
+
+print("Tyle adresow pochodzi z Polski:", str(x))
+
+y = 0
+with open('numery.txt', 'r') as plik:
+    Plik = plik.read()
+    N = re.findall(r'[0]{3,}', Plik)
+    y += len(N)
+    N = re.findall(r'[1]{3,}', Plik)
+    y += len(N)
+    N = re.findall(r'[2]{3,}', Plik)
+    y += len(N)
+    N = re.findall(r'[3]{3,}', Plik)
+    y += len(N)
+    N = re.findall(r'[4]{3,}', Plik)
+    y += len(N)
+    N = re.findall(r'[5]{3,}', Plik)
+    y += len(N)
+    N = re.findall(r'[6]{3,}', Plik)
+    y += len(N)
+    N = re.findall(r'[7]{3,}', Plik)
+    y += len(N)
+    N = re.findall(r'[8]{3,}', Plik)
+    y += len(N)
+    N = re.findall(r'[9]{3,}', Plik)
+    y += len(N)
+    print("Liczba numerow:", str(y))
+    plik.close()
+
+
+
+tekst = "Kontakt do naszych oddziałów: Warszawa +48 123 456 789, Berlin +49 234 567 890, Nowy Jork +1 987 654 3210, Londyn +44-843-243-3224"
+#t = re.findall(r'\d+', tekst)
+#t = re.findall(r'^+', tekst)
+t = re.split(r'[A-Za-z]', tekst)
+print(t)
+x = ""
+#for i in [t.len()]:
+   # x += t[i]
+  #  if (i+1)%4 == 0:
+     #   T = "+" + str(x)
