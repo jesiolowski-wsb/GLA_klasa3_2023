@@ -1,0 +1,45 @@
+import requests
+from colorama import Fore, Back
+from random import choice
+print(Fore.LIGHTWHITE_EX)
+
+def wordle():
+    a = requests.get("https://gist.githubusercontent.com/dracos/dd0668f281e685bad51479e5acaadb93/raw/6bfa15d263d6d5b63840a8e5b64e04b382fdb079/valid-wordle-words.txt").text.strip().splitlines()
+    word = choice(a)
+    win = False
+    b = ['_','_','_','_','_']
+    tries = 5
+    print("Your word is:", ''.join(b), "You have 5 guesses")
+    game = True
+    while game == True:
+        if tries == 0:
+            print("Game over, your word was " + word)
+            game = False
+        else:
+            guessed_word = input('Guess a word 5 in length: ').lower()
+            e = True
+            while e == True:
+                if len(guessed_word) != 5:
+                    guessed_word = input('only 5 in length, type a real one: ').lower()
+                else:
+                    e = False
+            if guessed_word == word:
+                game = False
+                win = True
+            for x in range(5):
+                if guessed_word[x] == word[x]:
+                    b[x] = guessed_word[x]
+            print('Guessed word: ', end="")
+            for x in range(5):
+                if guessed_word[x] in word:
+                    if guessed_word[x] == word[x]:
+                        print(Back.LIGHTGREEN_EX + guessed_word[x] + Back.RESET, end="")
+                    else:
+                        print(Back.LIGHTYELLOW_EX + guessed_word[x] + Back.RESET, end="")
+                else:
+                    print(Back.LIGHTRED_EX + guessed_word[x] + Back.RESET, end="")
+            print("", end=" ")
+            tries -= 1
+    if win == True:
+        print('Congrats you win!')
+wordle()
