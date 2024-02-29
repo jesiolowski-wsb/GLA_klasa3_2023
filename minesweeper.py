@@ -1,3 +1,5 @@
+#To jest prostawersja sapera. Wygrywasz jakodkryjesz wszystkie pola bez min.
+#Stanislaw Szutowicz
 import random
 
 
