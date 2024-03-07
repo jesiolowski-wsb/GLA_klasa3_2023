@@ -1,0 +1,1 @@
+poproszę o wyniki tutaj
