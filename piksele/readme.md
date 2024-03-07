@@ -1,1 +1,1 @@
-poproszę o wyniki tutaj
+poproszę o wyniki zadania z pikselami tutaj :)
