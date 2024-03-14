@@ -1,0 +1,29 @@
+import re
+tekst ="Dokumentacja pojazdów: Ford Mustang VIN: AFAFP404XYF223456 należał do Steve'a, zanim został sprzedany z VIN: W0L0XCE075E033456. W naszej bazie znajdują się również pojazdy importowane takie jak Nissan z VIN: JN1TANR35U0001234."
+
+wynik = re.findall("[A-Za-z0-9]{17}", tekst)
+europa = re.findall("[A-Ea-e][A-Za-z0-9]{16}",tekst)
+
+print("numery VIN z 17 znakami to: ", wynik)
+print("Numery VIN z europy to : ", europa)
+
+
+import re
+with open("hasla.txt") as f:
+    tekst = f.read().splitlines()
+
+print(tekst[65])
+
+slabe = re.findall("(.)\1\1", tekst[65])
+
+print(slabe)
+
+
+
+
+import re
+
+tekst = "Kontakt do naszych pracowników: Jan Kowalski - jan.kowalski@example.com, Anna Nowak - anna.nowak@company.org. Prosimy o przesyłanie wszelkich zapytań na te adresy."
+zanonimizowane = re.sub("[^@ ]+@", '***********@', tekst)
+
+print(zanonimizowane)
