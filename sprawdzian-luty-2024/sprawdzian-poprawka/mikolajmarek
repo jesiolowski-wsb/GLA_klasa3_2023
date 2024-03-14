@@ -1,0 +1,33 @@
+1.
+import re
+tekst ="Dokumentacja pojazdów: Ford Mustang VIN: AFAFP404XYF223456 należał do Steve'a, zanim został sprzedany z VIN: W0L0XCE075E033456. W naszej bazie znajdują się również pojazdy importowane takie jak Nissan z VIN: JN1TANR35U0001234."
+a = re.split("\s", tekst)
+print(a)
+p = len(a)
+VIN = []
+VINEU = []
+n = 0
+while n < p:
+    z = a[n]
+    if len(z) == 17 or len(z) == 18:
+
+
+        VIN.append(z)
+
+        if z[0] == "A" or z[0] == "E":
+            VINEU.append(z)
+    n = n + 1
+print(VIN)
+
+print(VINEU)
+3
+import re
+txt = "Kontakt do naszych pracowników: Jan Kowalski - jan.kowalski@example.com, Anna Nowak - anna.nowak@company.org. Prosimy o przesyłanie wszelkich zapytań na te adresy."
+k = r'[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+'
+def zamien(k):
+    adres = k.group(0)
+    pierwsza, druga = adres.split("@")
+    pierwsza1 = "*" * len(pierwsza)
+    return pierwsza1 + "@" + druga
+tekst1 = re.sub(k, zamien, txt)
+print(tekst1)
