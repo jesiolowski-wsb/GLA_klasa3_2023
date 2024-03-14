@@ -1,0 +1,14 @@
+import re
+
+tekst ="Dokumentacja pojazdów: Ford Mustang VIN: AFAFP404XYF223456 należał do Steve'a, zanim został sprzedany z VIN: W0L0XCE075E033456. W naszej bazie znajdują się również pojazdy importowane takie jak Nissan z VIN: JN1TANR35U0001234."
+x = r'[A-Z0-9]+[0-9A-Z]'
+znalezione_vin = re.findall(x,tekst)
+europa = [vin for vin in znalezione_vin if vin.startswith('A') or vin.startswith('B') or vin.startswith('C') or vin.startswith('D') or vin.startswith('E')]
+
+
+print("Znalezione numery vin:")
+for vin in znalezione_vin:
+    print(vin)
+
+print("\nLiczba europejskich nurmerow vin:\n",len(europa))
+print(europa)
