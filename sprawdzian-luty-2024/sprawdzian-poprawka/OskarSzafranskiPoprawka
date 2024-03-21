@@ -1,0 +1,45 @@
+import re
+
+#SEKCJA A
+tekst ="Dokumentacja pojazdów: Ford Mustang VIN: AFAFP404XYF223456 należał do Steve'a, zanim został sprzedany z VIN: W0L0XCE075E033456. W naszej bazie znajdują się również pojazdy importowane takie jak Nissan z VIN: JN1TANR35U0001234."
+wzorzec=re.compile(r'\b[\w]{17}\b')
+wszystkieVIN=wzorzec.findall(tekst)
+europejskie=[VIN for VIN in wszystkieVIN if VIN.startswith('A') or VIN.startswith('E')]
+print(wszystkieVIN)
+print(len(europejskie),' europejskich VINów')
+print(europejskie)
+
+#SEKCJA B
+slabe=[]
+with open('hasla.txt','r') as hasla:
+    Wtesame=re.compile(r'(.)\1\1')
+    for haslo in hasla:
+        haslo=haslo.strip()
+        if Wtesame.match(haslo):
+            slabe.append(haslo)
+    for haslo in hasla:
+        haslo=haslo.strip()
+        if 'abcd' in haslo or 'zxcv' in haslo or '1234' in haslo:
+            slabe.append(haslo)
+    print(len(slabe),'słabe')
+
+with open('hasla.txt', 'r') as hasla:
+    czyma=re.compile(r'[a-zA-Z\d@$!%*?&]{8,}')
+    zawierajace=[]
+    for haslo in hasla:
+        haslo=haslo.strip()
+        if czyma.search(haslo):
+            zawierajace.append(haslo)
+    print(len(zawierajace),'mocne')
+
+#SEKCJA C
+
+def kropki(poczatek):
+    dlugosc=len(poczatek.group(0).replace('@',''))
+    return '*' * dlugosc + '@'
+
+tekst="Kontakt do naszych pracowników: Jan Kowalski - jan.kowalski@example.com, Anna Nowak - anna.nowak@company.org. Prosimy o przesyłanie wszelkich zapytań na te adresy."
+wzor=r'\b[a-zA-Z]+\.[a-zA-Z]+@'
+
+kropkowanytekst=re.sub(wzor,kropki,tekst)
+print(kropkowanytekst)
