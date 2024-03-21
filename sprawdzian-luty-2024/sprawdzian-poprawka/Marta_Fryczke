@@ -1,0 +1,41 @@
+import re
+
+#A
+tekst ="Dokumentacja pojazdów: Ford Mustang VIN: AFAFP404XYF223456 należał do Steve'a, zanim został sprzedany z VIN: W0L0XCE075E033456. W naszej bazie znajdują się również pojazdy importowane takie jak Nissan z VIN: JN1TANR35U0001234."
+
+VIN = re.findall(r'\w{17}', tekst)
+VIN_string = " ".join(VIN)
+EU_VIN = re.findall(r'\A[A-E]+\w{16}', VIN_string)
+EU_VIN_string = " ".join(EU_VIN)
+print(f'wszystkie numery VIN: {VIN_string}')
+print(f'Europejskie numery VIN: {EU_VIN_string}')
+print(f"liczba europejskich numerów VIN: {len(EU_VIN)}")
+
+#B
+f = open("hasla.txt", "r")
+hasla = f.read()
+hasla_list = hasla.split('\n')
+hasla_list.pop()
+slabe_hasla = []
+
+x=0
+while x in range(len(hasla_list)):
+    powtórzenia = re.search(r'(.)\1\1', hasla_list[x])
+    powtórzenia2 = re.search(r'[aaa]|[1234]|[abcd]', hasla_list[x])
+    if powtórzenia != None and powtórzenia2 != None:
+      slabe_hasla.append(hasla_list[x])
+    x+=1
+
+print(f'liczba slabych hasel : {len(slabe_hasla)}')
+
+szukane_hasla = re.findall(r'[a-zA-Z0-9@$!%*?&]{8}', hasla)
+
+print(f'liczba haseł spełniających warunki: {len(szukane_hasla)}')
+
+#C
+
+zadanieC = "Kontakt do naszych pracowników: Jan Kowalski - jan.kowalski@example.com, Anna Nowak - anna.nowak@company.org. Prosimy o przesyłanie wszelkich zapytań na te adresy."
+
+cenzura = re.sub(r"[^@ ]+@","************@", zadanieC)
+
+print(cenzura)
