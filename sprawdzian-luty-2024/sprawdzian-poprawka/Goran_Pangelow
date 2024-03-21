@@ -1,0 +1,28 @@
+import re
+tekst ="Dokumentacja pojazdów: Ford Mustang VIN: AFAFP404XYF223456 należał do Steve'a, zanim został sprzedany z VIN: W0L0XCE075E033456. W naszej bazie znajdują się również pojazdy importowane takie jak Nissan z VIN: JN1TANR35U0001234."
+x=re.findall(r'[A-Z0-9]{17}',tekst)
+print(x)
+y=[vin for vin in x if re.search(r'\A[A-E]',vin)]
+print(f'Jest {len(y)} europejskich vinów')
+print(y)
+licznik1=0
+licznik2=0
+with open( 'hasla', "r") as plik:
+    for linia in plik:
+        haslo = linia.strip()
+        if bool(re.search(r"(.)\1\1",haslo)):
+            licznik1=licznik1+1
+        elif bool(re.search("abcd" or "123" or "aaa",haslo)):
+            licznik1=licznik1+1
+        if bool(re.search(r'[A-Za-z0-9@$!%*?&]{8,}',haslo)):
+            licznik2=licznik2+1
+print(licznik1)
+print(licznik2)
+zad3="Kontakt do naszych pracowników: Jan Kowalski - jan.kowalski@example.com, Anna Nowak - anna.nowak@company.org. Prosimy o przesyłanie wszelkich zapytań na te adresy."
+c=r'[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+'
+def anonim(c):
+    czesc=c.group(0)
+    zmienna, stała=czesc.split("@")
+    zmienna='*'*len(czesc)
+    return zmienna +"@"+stała
+print(re.sub(c,anonim,zad3))
