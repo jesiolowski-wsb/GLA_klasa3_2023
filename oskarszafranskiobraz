@@ -1,0 +1,21 @@
+linie=[]
+def minimum(a):
+    min = 255
+    for y in a:
+       if y<min:
+           min=y
+    return min
+
+def maximum(a):
+    max = 0
+    for y in a:
+       if y>max:
+           max=y
+    return max
+with open('dane.txt') as dane:
+    for linia in dane:
+        ddddd=linia.rstrip().split(" ")
+        linie=[int(x) for x in ddddd]
+    print(maximum(linie))
+    print(minimum(linie))
+    print(linie)
