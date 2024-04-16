@@ -1,3 +1,5 @@
+#1
+
 import re
 
 tekst ="Dokumentacja pojazdów: Ford Mustang VIN: AFAFP404XYF223456 należał do Steve'a, zanim został sprzedany z VIN: W0L0XCE075E033456. W naszej bazie znajdują się również pojazdy importowane takie jak Nissan z VIN: JN1TANR35U0001234."
@@ -5,10 +7,58 @@ x = r'[A-Z0-9]+[0-9A-Z]'
 znalezione_vin = re.findall(x,tekst)
 europa = [vin for vin in znalezione_vin if vin.startswith('A') or vin.startswith('B') or vin.startswith('C') or vin.startswith('D') or vin.startswith('E')]
 
-
 print("Znalezione numery vin:")
 for vin in znalezione_vin:
     print(vin)
 
 print("\nLiczba europejskich nurmerow vin:\n",len(europa))
 print(europa)
+
+
+
+#2
+
+import re
+
+with open("hasla.txt", "r") as file:
+    hasla = file.readlines()
+
+slabehasla = 0
+
+for password in hasla:
+    password = password.strip()  
+    if re.search(r'(.)\1\1', password) or re.search(r'123|234|345|456|567|678|789|890|qwerty|asdf|zxcv|abcd|dcba|zyxw', password.lower()):
+        slabehasla += 1
+
+spokohaslo = 0
+
+for password in hasla:
+    password = password.strip()  
+    if re.match(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$', password):
+        spokohaslo += 1
+
+print("Liczba haseł słabych ze względu na powtórzenia lub sekwencje:", slabehasla)
+print("Liczba haseł silnych:", spokohaslo)
+
+
+
+
+#3
+
+import re
+
+def anonim_email(tekst):
+
+    wzor = r'(\w+)(\.\w+)*@(\w+\.\w+)'
+
+    def zamien_na_gwiazdki(match):
+        lokalna_czesc = match.group(1)
+        liczba_gwiazdek = len(lokalna_czesc)
+        return '*' * liczba_gwiazdek + match.group(2) + '@' + match.group(3)
+
+    anonim_tekst = re.sub(wzor, zamien_na_gwiazdki, tekst)
+
+    return anonim_tekst
+
+tekst = "Kontakt do naszych pracowników: Jan Kowalski - jan.kowalski@example.com, Anna Nowak - anna.nowak@company.org. Prosimy o przesyłanie wszelkich zapytań na te adresy."
+print(anonim_email(tekst))
