@@ -1,0 +1,42 @@
+import re
+
+tekst1 = "Dokumentacja pojazdów: Ford Mustang VIN: AFAFP404XYF223456 należał do Steve'a, zanim został sprzedany z VIN: W0L0XCE075E033456. W naszej bazie znajdują się również pojazdy importowane takie jak Nissan z VIN: JN1TANR35U0001234."
+wynik1_1 = re.findall(r'[0-9A-Z]{17}', tekst1)
+print("Zadanie 1.1:", wynik1_1)
+
+wynik1_2 = 0
+for x in range(len(wynik1_1)):
+    if wynik1_1[x].startswith('A') or wynik1_1[x].startswith('B') or wynik1_1[x].startswith('C') or wynik1_1[x].startswith('D') or wynik1_1[x].startswith('E'):
+        wynik1_2 += 1
+        wynik1_3 = wynik1_1[x]
+        print("Zadanie 1.3:", wynik1_3)
+print("Zadanie 1.2:", wynik1_2)
+
+with open('hasla.txt', 'r') as plik:
+    plik = plik.read().split('\n')
+    wynik2_1 = 0
+    wynik2_2 = 0
+    for x in range(len(plik)):
+        haslo = plik[x]
+        proste_hasla = re.findall(r'(.)\1\1|abcd|1234|zxcv', haslo)
+        if proste_hasla != []: wynik2_1 += 1
+        if re.findall(r'[0-9]', haslo) != []:
+            if re.findall(r'[A-Z|a-z]', haslo) != []:
+                if re.findall(r'[@$!%*?&]', haslo) != []:
+                    if re.findall(r'(.){8,}', haslo) != []:
+                        wynik2_2 += 1
+    print("Zadanie 2.1:", wynik2_1)
+    print("Zadanie 2.2:", wynik2_2)
+
+tekst2 = "Kontakt do naszych pracowników: Jan Kowalski - jan.kowalski@example.com, Anna Nowak - anna.nowak@company.org. Prosimy o przesyłanie wszelkich zapytań na te adresy."
+lista_tekst2 = tekst2.split()
+for x in range(len(lista_tekst2)):
+    if "@" in lista_tekst2[x]:
+        mail = lista_tekst2[x]
+        dzielony_mail = mail.split("@")
+        poczatek_mail = dzielony_mail[0]
+        kodowany_poczatek = re.sub(r'[a-z.]', "*", poczatek_mail)
+        zakodowany_mail = kodowany_poczatek + "@" + dzielony_mail[1]
+        lista_tekst2[x] = zakodowany_mail
+wynik3 = " ".join(lista_tekst2)
+print("Zadanie 3:", wynik3)
