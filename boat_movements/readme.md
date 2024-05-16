@@ -4,7 +4,7 @@
 <img width="297" alt="image" src="https://github.com/jesiolowski-wsb/GLA_klasa3_2023/assets/67168776/7968d6d7-650f-4148-9157-04ace31a433b">
 
 </p>
-<p>Jako że jednostka może poruszać się tylko po wodzie, przeszkoda typu wysepka / inna wariacja nt. suchego lądu blokuje możliwośc poruszania się - state nie może się tam przemieścić</p>
+<p>Jako że jednostka może poruszać się tylko po wodzie, przeszkoda typu wysepka / inna wariacja nt. suchego lądu blokuje możliwośc poruszania się - statek nie może się tam przemieścić</p>
 <p>Stwórz funkcję <em>can_travel_to</em>, która będzie w stanie sprawdzić czy cel podróży łodzi jest dka gracza osiągalny. It should return <em>True </em>for destinations that are reachable according to the pattern above, and <em>False </em>for unreachable or out of bounds destinations which are outside the grid.&nbsp;</p>
 <p>Jako przykład, kod poniżej:</p>
 <pre><code class="language-python hljs">gameMatrix = [
