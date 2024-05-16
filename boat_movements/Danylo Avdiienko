@@ -1,0 +1,47 @@
+gameMatrix = [
+    [False, True,  True,  False, False, False],
+    [True,  True,  True,  False, False, False],
+    [True,  True,  True,  True,  True,  True],
+    [False, True,  True,  False, True,  True],
+    [False, True,  True,  True,  False, True],
+    [False, False, False, False, False, False],
+]
+
+def can_travel_to(plan, y1, x1, y2, x2):
+    a=0
+    if x1 >= 0 and x1 <= 5 and y1 >= 0 and y1 <= 5 and x2 >= 0 and x2 <= 5 and y2 >= 0 and y2 <= 5:
+        if x2==x1 or y1==y2:
+            if abs(y2-y1) <= 1:
+                if abs(x2-x1) <=1:
+                    if plan[y1][x1]:
+                        if plan[y2][x2]:
+                            print('Statek porusza sie bez problemu')
+                        else:
+                            print('Przeplyw jest zablokowany')
+                    else:
+                        print("Statek nie moze tam sie znajdowac")
+                elif x2-x1 >= 2 and x2-x1 <= 3:
+                    if plan[y1][x1]:
+                        if plan[y2][x2]:
+                            for i in range(x1, len(plan[y2])):
+                                if not plan[y2][i]:
+                                    a=1
+                                    break
+                            if a ==0:
+                                print('Statek porusza sie bez problemu')
+                            else:
+                                print('Przeplyw jest zablokowany')
+                        else:
+                            print('Przeplyw jest zablokowany')
+                    else:
+                        print("Statek nie moze tam sie znajdowac")
+                else:
+                    print("Zbyt daleko")
+            else:
+                print("Zbyt daleko")
+        else:
+            print("Za trudny manewr")
+    else:
+        print("Poza zakresem")
+
+can_travel_to(gameMatrix, 2, 2, 2, 5)
