@@ -1,0 +1,45 @@
+gameMatrix = [
+    [False, True,  True,  False, False, False],
+    [True,  True,  True,  False, False, False],
+    [True,  True,  True,  True,  True,  True],
+    [False, True,  True,  False, True,  True],
+    [False, True,  True,  True,  False, True],
+    [False, False, False, False, False, False],
+]
+
+def can_travel_to(plansza, y, x, go_to_y, go_to_x):
+
+    roznica_y = abs(y - go_to_y)
+    roznica_x = abs(x - go_to_x)
+    zakres_ruchu = 0
+
+    if roznica_y == 1 and roznica_x == 0:
+        zakres_ruchu = 1
+    elif roznica_y == 0 and roznica_x == 1:
+        zakres_ruchu = 1
+    elif roznica_y == 0 and roznica_x == 2:
+        if go_to_x > x:
+            if plansza[go_to_y][go_to_x - 1]:
+                zakres_ruchu = 1
+        else: zakres_ruchu = 0
+    else: zakres_ruchu = 0
+
+
+    if x+1 > len(plansza[y]) or x < 0:
+        zakres_ruchu = 0
+    if y+1 > len(plansza) or y < 0:
+        zakres_ruchu = 0
+
+
+    if zakres_ruchu == 1:
+        if plansza[go_to_y][go_to_x]:
+            return True
+        else: return False
+    else: return False
+
+
+print(can_travel_to(gameMatrix, 3, 2, 2, 2)) # True, ruch jest dopuszczalny
+print(can_travel_to(gameMatrix, 3, 2, 3, 4)) # False, nie można przepłynąć przez ląd
+print(can_travel_to(gameMatrix, 3, 2, 3, 3)) # False, nie można przepłynąć przez ląd
+print(can_travel_to(gameMatrix, 3, 2, 3, 5)) # False, nie można przepłynąć przez ląd + zbyt daleko
+print(can_travel_to(gameMatrix, 3, 2, 6, 2)) # False, poza dopuszczalnym zakresem
