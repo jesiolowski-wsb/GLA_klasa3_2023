@@ -1,4 +1,4 @@
-<div><p>A turn-based strategy game has a grid with water and land. The grid contains a <em>True</em> value where it's water and <em>False</em> where it's land.</p>
+<div><p>Hipotetyczna gra turowa ze statkiem poruszającym się w określony sposób. Siatka / plansza zawiera wartości <em>True</em> jeśli na pozycji znajduje się woda oraz <em>False</em> jeśli na pozycji znajduje się suchy ląd.</p>
 <p>The player controls a boat unit with a particular movement pattern. It can only move to fixed destinations from its current position as shown in the image below:</p>
 <p>
 <img width="297" alt="image" src="https://github.com/jesiolowski-wsb/GLA_klasa3_2023/assets/67168776/7968d6d7-650f-4148-9157-04ace31a433b">
