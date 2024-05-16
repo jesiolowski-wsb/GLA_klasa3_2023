@@ -22,4 +22,5 @@
 
 <p>The following image shows valid and invalid destinations when the boat is in the position (3, 2):</p>
 
-<p><img alt="terrain movement" height="330" sizes="(min-width: 505px) 505px, 50vw" src="/resources/media/48b1c636-9856-487a-9960-50e592424970/Terrain-PPT-pattern2_small.jpg" srcset="/resources/media/48b1c636-9856-487a-9960-50e592424970/Terrain-PPT-pattern2_small.jpg 505w, /resources/media/48b1c636-9856-487a-9960-50e592424970/Terrain-PPT-pattern2_small-378.jpg 378w" style="max-height: 330px; max-width: 560px" width="329"></p></div>
+<p><img width="297" alt="image" src="https://github.com/jesiolowski-wsb/GLA_klasa3_2023/assets/67168776/e408e14c-7198-4f28-a5b5-90e02b4cd48f">
+</p></div>
