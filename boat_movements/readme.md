@@ -24,3 +24,6 @@
 
 <p><img width="297" alt="image" src="https://github.com/jesiolowski-wsb/GLA_klasa3_2023/assets/67168776/e408e14c-7198-4f28-a5b5-90e02b4cd48f">
 </p></div>
+
+
+Odpowiedzi jak zwykle poproszę wrzucić do bieżącego folderu jako pliki nazwane imieniem i nazwiskiem
