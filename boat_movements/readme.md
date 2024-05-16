@@ -18,6 +18,8 @@
 
 <span class="hljs-built_in">print</span>(can_travel_to(gameMatrix, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>)) <span class="hljs-comment"># True, ruch jest dopuszczalny</span>
 <span class="hljs-built_in">print</span>(can_travel_to(gameMatrix, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)) <span class="hljs-comment"># False, nie można przepłynąć przez ląd</span>
+<span class="hljs-built_in">print</span>(can_travel_to(gameMatrix, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment"># False, nie można przepłynąć przez ląd</span>
+<span class="hljs-built_in">print</span>(can_travel_to(gameMatrix, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>)) <span class="hljs-comment"># False, nie można przepłynąć przez ląd + zbyt daleko</span>
 <span class="hljs-built_in">print</span>(can_travel_to(gameMatrix, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">2</span>)) <span class="hljs-comment"># False, poza dopuszczalnym zakresem</span></code></pre>
 
 <p>Obrazek poniżej ilustruje wszystkie dopuszczalne ruchy wynikające ze statku na pozycji (3, 2):</p>
