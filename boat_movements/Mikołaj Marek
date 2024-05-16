@@ -1,0 +1,18 @@
+plansza = [
+    False, True,  True,  False, False, False,
+    True,  True,  True,  False, False, False,
+    True,  True,  True,  True,  True,  True,
+    False, True,  True,  False, True,  True,
+    False, True,  True,  True,  False, True,
+    False, False, False, False, False, False]
+def can_travel_to(mapa, x1, y1, x2, y2):
+    pole = (x2 - 1) * 6 + y2 - 1
+    statek = (x1 -1) * 6 + y1 - 1
+
+
+    if pole - statek == 2 or pole - statek == 1 or statek - pole == 1 or pole - statek == 6 or statek - pole == 6  and mapa[pole-statek] == "True" or mapa[statek - pole] == "True":
+        print("True mozna sie ruszyc")
+    else:
+        print("false nie moze sie ruszyc")
+
+print(can_travel_to(plansza, 3, 2, 3, 5))
