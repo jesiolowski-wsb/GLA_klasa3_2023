@@ -1,0 +1,49 @@
+def cantravelto(file,lodka,move):
+  #a,b pozycja lodki
+  a = lodka[0]-1
+  b = lodka[1]-1
+  x = move[0]-1
+  y = move[1]-1
+  
+  #x,y pozycja docelowa
+  if file[x+1][y+1]=="True":
+    if y == b+1 and x==a:
+      return True
+    elif y == b-1 and x==a:
+      return True
+    elif x == a-1 and y==b:
+      return True
+    elif x == a+1 and y==b:
+      return True
+    elif x == a+2 and y == b and file[a+1][b]=="True":
+      return True
+    else:
+      return False
+  else:
+    return False
+
+Lodka = [3,5] #########################################################
+Move=[5,5]  #################    TUTAJ ZMIENIAĆ    ###################
+
+with open("file.txt","r") as file:
+  txt = file.read().split("\n")
+for i in range(len(txt)):
+  txt[i] = txt[i].split(" ")
+
+for n in range(len(txt)):
+  for m in range(len(txt[n])):
+    if n == Lodka[1]-1 and m == Lodka[0]-1:
+      print("L ", end = " ") 
+    elif txt[n][m] == "False":
+      if n==Move[1]-1 and m==Move[0]-1:
+        print("x ", end = " ")
+      else:
+        print("X ", end=" ")
+    else:
+      if n==Move[1]-1 and m==Move[0]-1:
+        print("o ", end = " ")
+      else:
+        print("O ",end=" ")
+  print()
+
+print(cantravelto(txt,Lodka,Move))
