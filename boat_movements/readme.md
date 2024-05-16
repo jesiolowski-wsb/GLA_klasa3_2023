@@ -1,5 +1,5 @@
 <div><p>Hipotetyczna gra turowa ze statkiem poruszającym się w określony sposób. Siatka / plansza zawiera wartości <em>True</em> jeśli na pozycji znajduje się woda oraz <em>False</em> jeśli na pozycji znajduje się suchy ląd.</p>
-<p>Gracz kontroluje łódź w ściśle określonny sposób. Jednostka może poruszać się po planszy jedynie po linii prostej i o określoną ilość pól (w zależności od kierunku)</p>
+<p>Gracz kontroluje łódź w ściśle określonny sposób. Jednostka może poruszać się po planszy jedynie po linii prostej i o określoną ilość pól (w zależności od kierunku w którym obecnie zwraca się dziób łodzi)</p>
 <p>
 <img width="297" alt="image" src="https://github.com/jesiolowski-wsb/GLA_klasa3_2023/assets/67168776/7968d6d7-650f-4148-9157-04ace31a433b">
 
